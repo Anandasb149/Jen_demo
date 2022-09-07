@@ -41,7 +41,7 @@ pipeline {
             stage ("Artifactory Publish"){
                 steps{
                     script{
-                            def server = Artifactory.server 'artifactory'
+                            def server = Artifactory.server 'JFROG'
                             def rtMaven = Artifactory.newMavenBuild()
                             //rtMaven.resolver server: server, releaseRepo: 'jenkins-devops', snapshotRepo: 'jenkins-devops-snapshot'
                             rtMaven.deployer server: server, releaseRepo: 'jenkins-devops', snapshotRepo: 'jenkins-devops-snapshot'
